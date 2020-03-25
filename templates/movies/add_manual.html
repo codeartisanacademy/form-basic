@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{ form.errors }}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+            {{form.title.label_tag}}
+            {{ form.title }}
+            {{ form.help_text }}
+            </div>
+            <div>
+                <label for="{{ form.year.id_for_label }}">Year</label>
+                {{ form.year }}
+            </div>
+            <div>
+                <label for="{{ form.director.id_for_label }}">Director</label>
+                {{ form.director }}
+            </div>
+            <div>
+                <label for="{{ form.synopsis.id_for_label }}">Synopsis</label>
+                {{ form.synopsis }}
+            </div>
+            <div>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+        <!--
+        {% for field in form %}
+            <p>
+                {{ field.label_tag}}
+                {{ field }}
+            </p>
+        {% endfor %}
+        -->
+    </div>
+</body>
+</html>

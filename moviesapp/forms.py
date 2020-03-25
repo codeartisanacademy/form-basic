@@ -6,7 +6,7 @@ class MovieAddForm(forms.Form):
     title = forms.CharField(max_length=200)
     year = forms.IntegerField()
     director = forms.CharField(max_length=200)
-    synopsis = forms.CharField(widget=forms.TextInput())
+    synopsis = forms.CharField(widget=forms.Textarea)
 
 
 '''
